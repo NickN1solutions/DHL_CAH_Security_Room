@@ -1317,6 +1317,7 @@
             this.txtc_phone.ReadOnly = true;
             this.txtc_phone.Size = new System.Drawing.Size(447, 31);
             this.txtc_phone.TabIndex = 57;
+            this.txtc_phone.Visible = false;
             // 
             // label55
             // 
@@ -1327,6 +1328,7 @@
             this.label55.Size = new System.Drawing.Size(53, 24);
             this.label55.TabIndex = 59;
             this.label55.Text = "電話:";
+            this.label55.Visible = false;
             // 
             // panel5
             // 
@@ -1563,7 +1565,7 @@
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(53, 24);
             this.label19.TabIndex = 34;
-            this.label19.Text = "部門:";
+            this.label19.Text = "公司:";
             // 
             // label20
             // 
@@ -1738,6 +1740,7 @@
             this.txtr_phone.ReadOnly = true;
             this.txtr_phone.Size = new System.Drawing.Size(447, 31);
             this.txtr_phone.TabIndex = 76;
+            this.txtr_phone.Visible = false;
             // 
             // label56
             // 
@@ -1748,6 +1751,7 @@
             this.label56.Size = new System.Drawing.Size(53, 24);
             this.label56.TabIndex = 80;
             this.label56.Text = "電話:";
+            this.label56.Visible = false;
             // 
             // panel6
             // 
@@ -1940,7 +1944,7 @@
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(56, 24);
             this.label31.TabIndex = 60;
-            this.label31.Text = "部門:";
+            this.label31.Text = "公司:";
             // 
             // label32
             // 

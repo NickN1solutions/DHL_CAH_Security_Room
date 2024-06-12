@@ -1540,10 +1540,18 @@ namespace dds_monitor_pro
                         txtc_num.Text = dr["Num"].ToString();
                         txtc_id.Text = dr["Id"].ToString();
 
-                        txtc_name.Text = dr["Last_Name"].ToString();
-                        txtc_staff_no.Text = dr["First_Name"].ToString();
+                        txtc_name.Text = dr["Last_Name"].ToString() + " " + dr["First_Name"].ToString();
+                        txtc_staff_no.Text = dr["Office_Phone"].ToString();
                         txtc_staff_date.Text = dr["StaffDate"].ToString();
-                        txtc_idcard.Text = dr["idcard"].ToString();
+                        string idcard = dr["idcard"].ToString();
+                        if (idcard.Length > 6)
+                        {
+                            txtc_idcard.Text ="****" + idcard.Substring(idcard.Length - 6);
+                        }
+                        else
+                        {
+                            txtc_idcard.Text = idcard;
+                        }
                         txtc_dept.Text = dr["Company"].ToString();
                         if (txtc_dept.Text.Trim().ToUpper() == "FTC")
                         {
@@ -2146,11 +2154,18 @@ namespace dds_monitor_pro
                         txtr_num.Text = dr4["Num"].ToString();
                         txtr_id.Text = dr4["Id"].ToString();
 
-                        txtr_name.Text = dr4["Last_Name"].ToString();
-                        txtr_staff_no.Text = dr4["First_Name"].ToString();
+                        txtr_name.Text = dr4["Last_Name"].ToString() + " " + dr4["First_Name"].ToString();
+                        txtr_staff_no.Text = dr4["Office_Phone"].ToString();
                         txtr_staff_date.Text = dr4["Start_Date"].ToString();
-                        txtr_idcard.Text = dr4["idcard"].ToString();
-
+                        string idcard = dr4["idcard"].ToString();
+                        if (idcard.Length > 6)
+                        {
+                            txtr_idcard.Text = "****" + idcard.Substring(idcard.Length - 6);
+                        }
+                        else
+                        {
+                            txtr_idcard.Text = idcard;
+                        }
                         txtr_phone.Text = dr4["Office_Phone"].ToString();
                         txtr_dept.Text = dr4["Company"].ToString();
 
