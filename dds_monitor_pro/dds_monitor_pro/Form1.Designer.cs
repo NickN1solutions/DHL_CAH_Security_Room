@@ -829,6 +829,7 @@
             this.txtphone.Name = "txtphone";
             this.txtphone.Size = new System.Drawing.Size(447, 31);
             this.txtphone.TabIndex = 13;
+            this.txtphone.Visible = false; // no need to input phone number, Office_phone is used for staff_no
             // 
             // label54
             // 
@@ -839,6 +840,7 @@
             this.label54.Size = new System.Drawing.Size(53, 24);
             this.label54.TabIndex = 57;
             this.label54.Text = "電話:";
+            this.label54.Visible = false;
             // 
             // label51
             // 
@@ -865,6 +867,7 @@
             this.txtidcard_code.Name = "txtidcard_code";
             this.txtidcard_code.Size = new System.Drawing.Size(33, 31);
             this.txtidcard_code.TabIndex = 12;
+            this.txtidcard_code.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtidcard_code_KeyPress);
             // 
             // panel4
             // 
@@ -1016,7 +1019,7 @@
             this.txtidcard.Name = "txtidcard";
             this.txtidcard.Size = new System.Drawing.Size(216, 31);
             this.txtidcard.TabIndex = 11;
-            this.txtidcard.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.txtidcard.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtidcard_KeyPress);
             // 
             // txtstaff_date
             // 
@@ -1060,7 +1063,7 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(60, 24);
             this.label13.TabIndex = 7;
-            this.label13.Text = "*部門:";
+            this.label13.Text = "*公司:";
             // 
             // label12
             // 

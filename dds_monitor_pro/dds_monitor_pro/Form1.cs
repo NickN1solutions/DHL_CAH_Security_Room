@@ -760,10 +760,6 @@ namespace dds_monitor_pro
 
 
         }
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -1409,7 +1405,7 @@ namespace dds_monitor_pro
                 String tmsg = "<query>";
                 tmsg = tmsg + "<Number>" + num.ToString() + "</Number>";
                 tmsg = tmsg + "<Last_Name>" + lastname + "</Last_Name>";
-                tmsg = tmsg + "<First_Name>" + staff_no + "</First_Name>";
+                tmsg = tmsg + "<First_Name>" + firstname + "</First_Name>";
                 if (string.IsNullOrEmpty(card_no.Trim()) == false)
                 {
                     tmsg = tmsg + "<Badge>" + card_no + "</Badge>";
@@ -1433,6 +1429,7 @@ namespace dds_monitor_pro
 
 
                 }
+                phone = String.IsNullOrEmpty(staff_no) ? "00000" : staff_no;
                 tmsg = tmsg + "<Office_Phone>" + phone + "</Office_Phone>";
 
 
@@ -2876,6 +2873,58 @@ namespace dds_monitor_pro
         private void txtcard_no_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtidcard_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check if text is selected in the TextBox
+            if (txtidcard.SelectionLength > 0)
+            {
+                return; // Allow keypress event for selected text
+            }
+
+            // Ensure the first character is a letter
+            if (txtidcard.Text.Length == 0 && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true; // Reject the keypress event
+                return;
+            }
+
+            // Ensure the remaining characters are digits
+            if (txtidcard.Text.Length > 0 && !char.IsDigit(e.KeyChar) && e.KeyChar != '\b')
+            {
+                e.Handled = true; // Reject the keypress event
+                return;
+            }
+
+            // Limit the input to a maximum of seven digits
+            if (txtidcard.Text.Length >= 7 && e.KeyChar != '\b')
+            {
+                e.Handled = true; // Reject the keypress event
+                return;
+            }
+        }
+
+        private void txtidcard_code_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Check if text is selected in the TextBox
+            if (txtidcard_code.SelectionLength > 0)
+            {
+                return; // Allow keypress event for selected text
+            }
+
+            // only accept digit
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Reject the keypress event
+            }
+
+            // only accept one digit
+            if (txtidcard_code.Text.Length > 0 && e.KeyChar != '\b')
+            {
+                e.Handled = true; // Reject the keypress event
+                return;
+            }
         }
 
         private void pic_photo_Click(object sender, EventArgs e)
