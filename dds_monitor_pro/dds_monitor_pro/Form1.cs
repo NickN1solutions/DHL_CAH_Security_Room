@@ -688,7 +688,8 @@ namespace dds_monitor_pro
 
             get_photopath = "";
 
-            txtname.Text = "";
+            txtLastName.Text = "";
+            txtFirstName.Text = "";
             txtstaff_no.Text = "";
             txtstaff_date.Text = "";
             txtidcard.Text = "";
@@ -1020,7 +1021,12 @@ namespace dds_monitor_pro
         {
             Boolean treturn = true;
 
-            if (string.IsNullOrEmpty(txtname.Text.Trim()))
+            if (string.IsNullOrEmpty(txtLastName.Text.Trim()))
+            {
+                treturn = false;
+                MessageBox.Show("必需輸入 {姓氏}");
+            }
+            if (string.IsNullOrEmpty(txtFirstName.Text.Trim()))
             {
                 treturn = false;
                 MessageBox.Show("必需輸入 {名稱}");
@@ -1058,7 +1064,8 @@ namespace dds_monitor_pro
             {
                 card_no = card_no.PadLeft(8, '0');
             }
-            string name = txtname.Text.Trim();
+            string lastname = txtLastName.Text.Trim();
+            string firstname = txtFirstName.Text.Trim();
             string staff_no = txtstaff_no.Text.Trim();
             string staff_date = txtstaff_date.Text.Trim();
             string c_from_date = txtstaff_date.Text.Trim();
@@ -1207,7 +1214,7 @@ namespace dds_monitor_pro
                 command.Parameters.AddWithValue("idcard", idcard);
 
 
-                command.Parameters.AddWithValue("name", name);
+                command.Parameters.AddWithValue("name", lastname);
 
                 command.Parameters.AddWithValue("staff_no", staff_no);
 
@@ -1401,7 +1408,7 @@ namespace dds_monitor_pro
 
                 String tmsg = "<query>";
                 tmsg = tmsg + "<Number>" + num.ToString() + "</Number>";
-                tmsg = tmsg + "<Last_Name>" + name + "</Last_Name>";
+                tmsg = tmsg + "<Last_Name>" + lastname + "</Last_Name>";
                 tmsg = tmsg + "<First_Name>" + staff_no + "</First_Name>";
                 if (string.IsNullOrEmpty(card_no.Trim()) == false)
                 {
@@ -1471,7 +1478,7 @@ namespace dds_monitor_pro
                 else
                 {
                     Console.WriteLine("insert id:" + num.ToString() + " data into DDS!");
-                    MessageBox.Show("系統編號: " + tnext_no.ToString().Trim() + "已加人: " + txtstaff_no.Text.ToString().Trim() + " " + txtname.Text.ToString().Trim());
+                    MessageBox.Show("系統編號: " + tnext_no.ToString().Trim() + "已加人: " + txtstaff_no.Text.ToString().Trim() + " " + txtLastName.Text.ToString().Trim() + " " + txtFirstName.Text.ToString().Trim());
                     clean_all();
 
                 };
@@ -3346,7 +3353,12 @@ namespace dds_monitor_pro
 
         }
 
-        private void txtname_TextChanged(object sender, EventArgs e)
+        private void txtLastName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtFirstName_TextChanged(object sender, EventArgs e)
         {
 
         }

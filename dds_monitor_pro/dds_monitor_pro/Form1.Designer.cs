@@ -95,7 +95,8 @@
             this.txtidcard = new System.Windows.Forms.TextBox();
             this.txtstaff_date = new System.Windows.Forms.TextBox();
             this.txtstaff_no = new System.Windows.Forms.TextBox();
-            this.txtname = new System.Windows.Forms.TextBox();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -103,6 +104,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.labelFirstName = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -798,7 +800,8 @@
             this.tabPage2.Controls.Add(this.txtidcard);
             this.tabPage2.Controls.Add(this.txtstaff_date);
             this.tabPage2.Controls.Add(this.txtstaff_no);
-            this.tabPage2.Controls.Add(this.txtname);
+            this.tabPage2.Controls.Add(this.txtLastName);
+            this.tabPage2.Controls.Add(this.txtFirstName);
             this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.label11);
@@ -806,6 +809,7 @@
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Controls.Add(this.labelFirstName);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1029,15 +1033,24 @@
             this.txtstaff_no.Name = "txtstaff_no";
             this.txtstaff_no.Size = new System.Drawing.Size(447, 31);
             this.txtstaff_no.TabIndex = 9;
-            // 
-            // txtname
-            // 
-            this.txtname.Font = new System.Drawing.Font("Calibri Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtname.Location = new System.Drawing.Point(131, 100);
-            this.txtname.Name = "txtname";
-            this.txtname.Size = new System.Drawing.Size(447, 31);
-            this.txtname.TabIndex = 8;
-            this.txtname.TextChanged += new System.EventHandler(this.txtname_TextChanged);
+            //
+            // txtLastName
+            //
+            this.txtLastName.Font = new System.Drawing.Font("Calibri Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastName.Location = new System.Drawing.Point(131, 100);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(140, 31);
+            this.txtLastName.TabIndex = 8;
+            this.txtLastName.TextChanged += new System.EventHandler(this.txtLastName_TextChanged);
+            //
+            // txtFirstName
+            //
+            this.txtFirstName.Font = new System.Drawing.Font("Calibri Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFirstName.Location = new System.Drawing.Point(350, 100);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(140, 31);
+            this.txtFirstName.TabIndex = 8;
+            this.txtFirstName.TextChanged += new System.EventHandler(this.txtFirstName_TextChanged);
             // 
             // label13
             // 
@@ -1099,15 +1112,25 @@
             this.label8.TabIndex = 2;
             this.label8.Text = "入職日期:";
             // 
-            // label7
+            // label7 Last_Name
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(50, 103);
+            this.label7.Location = new System.Drawing.Point(75, 103);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(60, 24);
             this.label7.TabIndex = 1;
-            this.label7.Text = "*姓名:";
+            this.label7.Text = "*姓:";
+            //
+            // labelFirstName
+            //
+            this.labelFirstName.AutoSize = true;
+            this.labelFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFirstName.Location = new System.Drawing.Point(300, 103);
+            this.labelFirstName.Name = "labelFirstName";
+            this.labelFirstName.Size = new System.Drawing.Size(60, 24);
+            this.labelFirstName.TabIndex = 1;
+            this.labelFirstName.Text = "*名:";
             // 
             // label6
             // 
@@ -3028,7 +3051,8 @@
         private System.Windows.Forms.TextBox txtidcard;
         private System.Windows.Forms.TextBox txtstaff_date;
         private System.Windows.Forms.TextBox txtstaff_no;
-        private System.Windows.Forms.TextBox txtname;
+        private System.Windows.Forms.TextBox txtLastName;
+        private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
@@ -3036,6 +3060,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label labelFirstName;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtc_card_no;
